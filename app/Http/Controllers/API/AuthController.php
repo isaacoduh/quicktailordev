@@ -46,8 +46,8 @@ class AuthController extends Controller
         return response()->json(['message' => 'Sign up successful']);
     }
 
-    public function getAllUsers(Request $request){
+    public function getusers(Request $request){
         $users = User::with('orders')->get();
-        return response()->json(['data' => $user]);
+        return response()->json(['data' => $users]);
     }
 }
