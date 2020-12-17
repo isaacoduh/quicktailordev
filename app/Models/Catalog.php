@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Catalog extends Model
 {
     use HasFactory;
-    protected $fillable =['category_id', 'name','price', 'image', 'inStock'];
+    protected $fillable =['category_id', 'name','price', 'photo', 'inStock'];
 
     public function category(){
         return $this->belongsTo(Category::class);

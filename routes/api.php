@@ -40,6 +40,12 @@ Route::namespace('API')->group(function(){
             Route::post('/{id}/update', [App\Http\Controllers\API\CategoriesController::class, 'update'])->name('updatecategory');
             Route::delete('/{id}/delete', [App\Http\Controllers\API\CategoriesController::class, 'destroy'])->name('deletecategory');
         });
+
+        Route::prefix('catalog')->group(function(){
+            Route::post('/add', [App\Http\Controllers\API\CatalogController::class,'create'])->name('addcatalog');
+            Route::post('/{id}/update', [App\Http\Controllers\API\CatalogController::class,'update'])->name('updatecatalog');
+            Route::post('/{id}/delete', [App\Http\Controllers\API\CatalogController::class,'destroy'])->name('deletecatalog');
+        });
     });
 
 });
